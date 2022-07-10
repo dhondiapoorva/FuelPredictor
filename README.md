@@ -27,9 +27,9 @@ To predict the rate of the fuel based on the following criteria: - Client Locati
    * ![alt text](https://github.com/sainarne15/Return_Order_Management/files/9079904/account_Controller_code_coverage.pdf)
 
 ### Contribution
-1. Apoorva Dhondi - Worked on 
-2. Sushma Gangavarapu - Worked on 
-3. Lakshmi Narasimha Sai Narne - Worked on 
+1. Apoorva Dhondi - Worked on Validations(Account, Client, Quote) for the Backend Models and updated the frontend Models.
+2. Sushma Gangavarapu - Created all the Models(Account, Client, Quote) for Backend and modified the Views accordingly.
+3. Lakshmi Narasimha Sai Narne - Modified the Controllers in the project and worked on writing Unit test cases and generated Code Coverage reports.
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
