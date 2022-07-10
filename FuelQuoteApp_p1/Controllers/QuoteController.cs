@@ -22,7 +22,7 @@ namespace FuelQuoteApp_p1.Controllers
         [HttpGet]
         public IActionResult QuoteHistory()
         {
-            FQuote quote = new FQuote()
+            FQuote quote1 = new FQuote()
             {
                 DateRequested = DateTime.Now,
                 GallonsRequested = 90,
@@ -30,9 +30,17 @@ namespace FuelQuoteApp_p1.Controllers
                 PricePerGallon = 5,
                 TotalAmount = 1515
             };
+            FQuote quote2 = new FQuote()
+            {
+                DateRequested = DateTime.Now,
+                GallonsRequested = 85,
+                DeliveryAddress = "Buffalo Drive",
+                PricePerGallon = 5,
+                TotalAmount = 1390
+            };
             List<FQuote> quotes = new List<FQuote>();
-            quotes.Add(quote);
-
+            quotes.Add(quote1);
+            quotes.Add(quote2);
             return View(quotes);
         }
     }

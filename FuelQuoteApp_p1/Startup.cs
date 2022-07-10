@@ -1,5 +1,5 @@
 using FuelQuoteApp_p1.Models.Account;
-using FuelQuoteApp_p1.Repository;
+
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -52,7 +52,12 @@ namespace FuelQuoteApp_p1
             }
                 ).SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Latest);
 
-           //services.AddScoped<IFuelQuoteRepository, FuelQuoteRepository>();
+           
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromHours(2);
+            }
+           );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -74,6 +79,7 @@ namespace FuelQuoteApp_p1
             app.UseRouting();
             app.UseCookiePolicy();
             app.UseAuthentication();
+            app.UseSession();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

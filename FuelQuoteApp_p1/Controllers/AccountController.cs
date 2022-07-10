@@ -1,8 +1,12 @@
-﻿using FuelQuoteApp_p1.Models.Account;
+﻿using FuelQuoteApp_p1.EntModels.Models;
+using FuelQuoteApp_p1.Models.Account;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
@@ -20,7 +24,15 @@ namespace FuelQuoteApp_p1.Controllers
         }
 
         [HttpGet]
+        [ExcludeFromCodeCoverage]
+        public IActionResult Display()
+        {
+            return View();
+        }
+
+        [HttpGet]
         [AllowAnonymous]
+        [ExcludeFromCodeCoverage]
         public IActionResult Login()
         {
             return View();
@@ -28,6 +40,7 @@ namespace FuelQuoteApp_p1.Controllers
 
         [HttpPost]
         [AllowAnonymous]
+        [ExcludeFromCodeCoverage]
         public async Task<IActionResult> Login(Login model)
         {
             if (ModelState.IsValid)
@@ -37,18 +50,36 @@ namespace FuelQuoteApp_p1.Controllers
 
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("ClientDashBoard", "Client");
+                    int userID = 1;   //Hard Coding
+                    User userinfo = new User
+                    {
+                        Id = userID,
+                        Email = model.Email
+                    };
+
+                    HttpContext.Session.SetString("SessionUser", JsonConvert.SerializeObject(userinfo));
+
+                    bool clientinfo = true; //Hard Coding
+                    if (clientinfo)
+                    {
+                        return RedirectToAction("ClientDashBoard", "Client");
+                    }
+                    else
+                    {
+                        TempData["ClientProfileInfo"] = "Fill the profile details before requesting for a quote";
+                        return RedirectToAction("ClientProfile", "Client");
+                    }
+
                 }
 
-
-                ModelState.AddModelError(string.Empty, "Loging Failed!");
-
+                ModelState.AddModelError(string.Empty, "Invalid Credentials!");
             }
             return View(model);
         }
 
         [HttpGet]
         [AllowAnonymous]
+        [ExcludeFromCodeCoverage]
         public IActionResult Register()
         {
             return View();
@@ -56,6 +87,7 @@ namespace FuelQuoteApp_p1.Controllers
 
         [HttpPost]
         [AllowAnonymous]
+        [ExcludeFromCodeCoverage]
         public async Task<IActionResult> Register(Register registerInfo)
         {
             if (ModelState.IsValid)
@@ -66,7 +98,15 @@ namespace FuelQuoteApp_p1.Controllers
                 if (result.Succeeded)
                 {
                     await signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("index", "home");
+                    User userinfo = new User
+                    {
+                        UserName = registerInfo.UserName,
+                        Email = registerInfo.Email
+                    };
+                    
+
+                    TempData["RegistrationSuccessful"] = "You're registered succesfully!";
+                    return RedirectToAction("Login", "Account");
                 }
 
                 foreach (var error in result.Errors)
@@ -78,10 +118,11 @@ namespace FuelQuoteApp_p1.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Logout()
+        [ExcludeFromCodeCoverage]
+        public IActionResult Logout()
         {
-            await signInManager.SignOutAsync();
-            return RedirectToAction("index", "home");
+            signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
 
         }
 

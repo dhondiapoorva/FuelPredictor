@@ -2072,6 +2072,19 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "FuelQuoteApp_p1.EntModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/FuelQuoteApp_p1.EntModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FuelQuoteApp_p1.EntModels.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -7293,10 +7306,16 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "FuelQuoteApp_p1.EntModels/1.0.0": {
+      "type": "project",
+      "path": "../FuelQuoteApp_p1.EntModels/FuelQuoteApp_p1.EntModels.csproj",
+      "msbuildProject": "../FuelQuoteApp_p1.EntModels/FuelQuoteApp_p1.EntModels.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "FuelQuoteApp_p1.EntModels >= 1.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 5.0.17",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.17",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.17",
@@ -7305,19 +7324,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Apoorva\\.nuget\\packages\\": {}
+    "C:\\Users\\Dell\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\SD\\Fuel_Predictor\\FuelQuoteApp_p1\\FuelQuoteApp_p1.csproj",
+      "projectUniqueName": "C:\\Users\\Dell\\OneDrive\\Desktop\\FuelQuoteApp_p1\\FuelQuoteApp_p1\\FuelQuoteApp_p1.csproj",
       "projectName": "FuelQuoteApp_p1",
-      "projectPath": "E:\\SD\\Fuel_Predictor\\FuelQuoteApp_p1\\FuelQuoteApp_p1.csproj",
-      "packagesPath": "C:\\Users\\Apoorva\\.nuget\\packages\\",
-      "outputPath": "E:\\SD\\Fuel_Predictor\\FuelQuoteApp_p1\\obj\\",
+      "projectPath": "C:\\Users\\Dell\\OneDrive\\Desktop\\FuelQuoteApp_p1\\FuelQuoteApp_p1\\FuelQuoteApp_p1.csproj",
+      "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Dell\\OneDrive\\Desktop\\FuelQuoteApp_p1\\FuelQuoteApp_p1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Apoorva\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7330,7 +7349,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Dell\\OneDrive\\Desktop\\FuelQuoteApp_p1\\FuelQuoteApp_p1.EntModels\\FuelQuoteApp_p1.EntModels.csproj": {
+              "projectPath": "C:\\Users\\Dell\\OneDrive\\Desktop\\FuelQuoteApp_p1\\FuelQuoteApp_p1.EntModels\\FuelQuoteApp_p1.EntModels.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -7386,7 +7409,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }
