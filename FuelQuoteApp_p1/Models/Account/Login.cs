@@ -17,3 +17,4 @@ namespace FuelQuoteApp_p1.Models.Account
         public bool RememberMe { get; set; }
     }
 }
+
