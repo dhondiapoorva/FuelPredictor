@@ -26,3 +26,4 @@ namespace FuelQuoteApp_p1.Models.Quote
         public float TotalAmount { get; set; }
     }
 }
+
