@@ -55,7 +55,6 @@ To predict the rate of the fuel based on the following criteria: - Client Locati
 * We have included some dummy records to display in the Get Quote Price and Quote History web pages.
 *  _Layout.cshtml in Views/Shared is the layout page which is shared by all the web pages in Views
 
-
 ### Screenshots
 * Login page
   * ![alt text](https://user-images.githubusercontent.com/42679257/175847183-dadcfbcc-be24-4caf-a778-8fb0456ef45c.PNG)
