@@ -23,3 +23,4 @@ namespace FuelQuoteApp_p1.Models.Account
         public string ConfirmPassword { get; set; }
     }
 }
+
