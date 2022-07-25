@@ -221,27 +221,38 @@ var assemblies = [
   {
     "name": "FuelQuoteApp_p1",
     "classes": [
-      { "name": "FuelQuoteApp_p1.Controllers.AccountController", "rp": "FuelQuoteApp_p1_AccountController.html", "cl": 22, "ucl": 0, "cal": 22, "tl": 150, "ct": "LineCoverage", "cbm": "-", "cb": 10, "tb": 10, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
-      { "name": "FuelQuoteApp_p1.Controllers.ClientController", "rp": "FuelQuoteApp_p1_ClientController.html", "cl": 20, "ucl": 0, "cal": 20, "tl": 123, "ct": "LineCoverage", "cbm": "-", "cb": 18, "tb": 18, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
+      { "name": "FuelQuoteApp_p1.Controllers.AccountController", "rp": "FuelQuoteApp_p1_AccountController.html", "cl": 23, "ucl": 0, "cal": 23, "tl": 153, "ct": "LineCoverage", "cbm": "-", "cb": 10, "tb": 10, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
+      { "name": "FuelQuoteApp_p1.Controllers.ClientController", "rp": "FuelQuoteApp_p1_ClientController.html", "cl": 24, "ucl": 0, "cal": 24, "tl": 119, "ct": "LineCoverage", "cbm": "-", "cb": 18, "tb": 18, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
       { "name": "FuelQuoteApp_p1.Controllers.HomeController", "rp": "FuelQuoteApp_p1_HomeController.html", "cl": 0, "ucl": 13, "cal": 13, "tl": 37, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 4, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
-      { "name": "FuelQuoteApp_p1.Controllers.QuoteController", "rp": "FuelQuoteApp_p1_QuoteController.html", "cl": 0, "ucl": 29, "cal": 29, "tl": 47, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
-      { "name": "FuelQuoteApp_p1.Migrations.db1", "rp": "FuelQuoteApp_p1_db1.html", "cl": 0, "ucl": 552, "cal": 552, "tl": 624, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
-      { "name": "FuelQuoteApp_p1.Migrations.FuelQuoteDBContextModelSnapshot", "rp": "FuelQuoteApp_p1_FuelQuoteDBContextModelSnapshot.html", "cl": 0, "ucl": 315, "cal": 315, "tl": 348, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
-      { "name": "FuelQuoteApp_p1.Models.Account.FuelQuoteDBContext", "rp": "FuelQuoteApp_p1_FuelQuoteDBContext.html", "cl": 0, "ucl": 9, "cal": 9, "tl": 28, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
-      { "name": "FuelQuoteApp_p1.Models.Account.Login", "rp": "FuelQuoteApp_p1_Login.html", "cl": 0, "ucl": 3, "cal": 3, "tl": 19, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
+      { "name": "FuelQuoteApp_p1.Controllers.QuoteController", "rp": "FuelQuoteApp_p1_QuoteController.html", "cl": 18, "ucl": 0, "cal": 18, "tl": 142, "ct": "LineCoverage", "cbm": "-", "cb": 4, "tb": 4, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
+      { "name": "FuelQuoteApp_p1.Migrations.db1", "rp": "FuelQuoteApp_p1_db1.html", "cl": 0, "ucl": 565, "cal": 565, "tl": 637, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
+      { "name": "FuelQuoteApp_p1.Migrations.FuelQuoteDBContextModelSnapshot", "rp": "FuelQuoteApp_p1_FuelQuoteDBContextModelSnapshot.html", "cl": 0, "ucl": 322, "cal": 322, "tl": 355, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
+      { "name": "FuelQuoteApp_p1.Models.Account.FuelQuoteDBContext", "rp": "FuelQuoteApp_p1_FuelQuoteDBContext.html", "cl": 0, "ucl": 9, "cal": 9, "tl": 27, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
+      { "name": "FuelQuoteApp_p1.Models.Account.Login", "rp": "FuelQuoteApp_p1_Login.html", "cl": 0, "ucl": 3, "cal": 3, "tl": 18, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
       { "name": "FuelQuoteApp_p1.Models.Account.Register", "rp": "FuelQuoteApp_p1_Register.html", "cl": 4, "ucl": 0, "cal": 4, "tl": 25, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
-      { "name": "FuelQuoteApp_p1.Models.Client_Profile.Profile", "rp": "FuelQuoteApp_p1_Profile.html", "cl": 6, "ucl": 0, "cal": 6, "tl": 34, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
+      { "name": "FuelQuoteApp_p1.Models.Client_Profile.Profile", "rp": "FuelQuoteApp_p1_Profile.html", "cl": 6, "ucl": 0, "cal": 6, "tl": 33, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
       { "name": "FuelQuoteApp_p1.Models.ErrorViewModel", "rp": "FuelQuoteApp_p1_ErrorViewModel.html", "cl": 0, "ucl": 2, "cal": 2, "tl": 11, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
-      { "name": "FuelQuoteApp_p1.Models.Quote.FQuote", "rp": "FuelQuoteApp_p1_FQuote.html", "cl": 0, "ucl": 6, "cal": 6, "tl": 28, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
+      { "name": "FuelQuoteApp_p1.Models.Quote.FQuote", "rp": "FuelQuoteApp_p1_FQuote.html", "cl": 0, "ucl": 5, "cal": 5, "tl": 37, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
+      { "name": "FuelQuoteApp_p1.Models.Quote.MyDateAttribute", "rp": "FuelQuoteApp_p1_MyDateAttribute.html", "cl": 0, "ucl": 4, "cal": 4, "tl": 37, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
       { "name": "FuelQuoteApp_p1.Program", "rp": "FuelQuoteApp_p1_Program.html", "cl": 0, "ucl": 8, "cal": 8, "tl": 26, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
-      { "name": "FuelQuoteApp_p1.Startup", "rp": "FuelQuoteApp_p1_Startup.html", "cl": 0, "ucl": 53, "cal": 53, "tl": 93, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 2, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
+      { "name": "FuelQuoteApp_p1.Provider.FuelQuoteProvider", "rp": "FuelQuoteApp_p1_FuelQuoteProvider.html", "cl": 28, "ucl": 0, "cal": 28, "tl": 55, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
+      { "name": "FuelQuoteApp_p1.Repository.FuelQuoteRepository", "rp": "FuelQuoteApp_p1_FuelQuoteRepository.html", "cl": 0, "ucl": 61, "cal": 61, "tl": 102, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 4, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
+      { "name": "FuelQuoteApp_p1.Startup", "rp": "FuelQuoteApp_p1_Startup.html", "cl": 0, "ucl": 55, "cal": 55, "tl": 95, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 2, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
+    ]},
+  {
+    "name": "FuelQuoteApp_p1.BusinessLayer",
+    "classes": [
+      { "name": "FuelQuoteApp_p1.BusinessLayer.BL.Price", "rp": "FuelQuoteApp_p1.BusinessLayer_Price.html", "cl": 0, "ucl": 2, "cal": 2, "tl": 10, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
+      { "name": "FuelQuoteApp_p1.BusinessLayer.BL.QuoteDetails", "rp": "FuelQuoteApp_p1.BusinessLayer_QuoteDetails.html", "cl": 0, "ucl": 4, "cal": 4, "tl": 11, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
+      { "name": "FuelQuoteApp_p1.BusinessLayer.Program", "rp": "FuelQuoteApp_p1.BusinessLayer_Program.html", "cl": 0, "ucl": 8, "cal": 8, "tl": 26, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
+      { "name": "FuelQuoteApp_p1.BusinessLayer.Startup", "rp": "FuelQuoteApp_p1.BusinessLayer_Startup.html", "cl": 0, "ucl": 16, "cal": 16, "tl": 40, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 2, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
     ]},
   {
     "name": "FuelQuoteApp_p1.EntModels",
     "classes": [
-      { "name": "FuelQuoteApp_p1.EntModels.Models.Client", "rp": "FuelQuoteApp_p1.EntModels_Client.html", "cl": 0, "ucl": 9, "cal": 9, "tl": 16, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
-      { "name": "FuelQuoteApp_p1.EntModels.Models.Quote", "rp": "FuelQuoteApp_p1.EntModels_Quote.html", "cl": 0, "ucl": 7, "cal": 7, "tl": 14, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
-      { "name": "FuelQuoteApp_p1.EntModels.Models.User", "rp": "FuelQuoteApp_p1.EntModels_User.html", "cl": 0, "ucl": 3, "cal": 3, "tl": 9, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
+      { "name": "FuelQuoteApp_p1.EntModels.Models.Client", "rp": "FuelQuoteApp_p1.EntModels_Client.html", "cl": 6, "ucl": 3, "cal": 9, "tl": 21, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
+      { "name": "FuelQuoteApp_p1.EntModels.Models.Quote", "rp": "FuelQuoteApp_p1.EntModels_Quote.html", "cl": 7, "ucl": 0, "cal": 7, "tl": 18, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
+      { "name": "FuelQuoteApp_p1.EntModels.Models.User", "rp": "FuelQuoteApp_p1.EntModels_User.html", "cl": 3, "ucl": 0, "cal": 3, "tl": 12, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
       { "name": "FuelQuoteApp_p1.EntModels.Program", "rp": "FuelQuoteApp_p1.EntModels_Program.html", "cl": 0, "ucl": 8, "cal": 8, "tl": 26, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
       { "name": "FuelQuoteApp_p1.EntModels.Startup", "rp": "FuelQuoteApp_p1.EntModels_Startup.html", "cl": 0, "ucl": 16, "cal": 16, "tl": 40, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 2, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
     ]},
@@ -254,10 +265,13 @@ var assemblies = [
       { "name": "AspNetCore.Views_Account_Register", "rp": "FuelQuoteApp_p1.Views_Views_Account_Register.html", "cl": 0, "ucl": 9, "cal": 9, "tl": 73, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 20, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
       { "name": "AspNetCore.Views_Client_ClientDashBoard", "rp": "FuelQuoteApp_p1.Views_Views_Client_ClientDashBoard.html", "cl": 0, "ucl": 4, "cal": 4, "tl": 85, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 4, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
       { "name": "AspNetCore.Views_Client_ClientProfile", "rp": "FuelQuoteApp_p1.Views_Views_Client_ClientProfile.html", "cl": 0, "ucl": 12, "cal": 12, "tl": 96, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 24, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
+      { "name": "AspNetCore.Views_Client_DisplayProfile", "rp": "FuelQuoteApp_p1.Views_Views_Client_DisplayProfile.html", "cl": 0, "ucl": 21, "cal": 21, "tl": 70, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 36, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
       { "name": "AspNetCore.Views_Home_Index", "rp": "FuelQuoteApp_p1.Views_Views_Home_Index.html", "cl": 0, "ucl": 1, "cal": 1, "tl": 8, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
       { "name": "AspNetCore.Views_Home_Privacy", "rp": "FuelQuoteApp_p1.Views_Views_Home_Privacy.html", "cl": 0, "ucl": 2, "cal": 2, "tl": 6, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
-      { "name": "AspNetCore.Views_Quote_GetQuote", "rp": "FuelQuoteApp_p1.Views_Views_Quote_GetQuote.html", "cl": 0, "ucl": 8, "cal": 8, "tl": 87, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 16, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
+      { "name": "AspNetCore.Views_Quote_GetFinalQuote", "rp": "FuelQuoteApp_p1.Views_Views_Quote_GetFinalQuote.html", "cl": 0, "ucl": 15, "cal": 15, "tl": 55, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 26, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
+      { "name": "AspNetCore.Views_Quote_GetQuote", "rp": "FuelQuoteApp_p1.Views_Views_Quote_GetQuote.html", "cl": 0, "ucl": 13, "cal": 13, "tl": 87, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 26, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
       { "name": "AspNetCore.Views_Quote_QuoteHistory", "rp": "FuelQuoteApp_p1.Views_Views_Quote_QuoteHistory.html", "cl": 0, "ucl": 16, "cal": 16, "tl": 76, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 2, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
+      { "name": "AspNetCore.Views_Quote_SavedQuote", "rp": "FuelQuoteApp_p1.Views_Views_Quote_SavedQuote.html", "cl": 0, "ucl": 14, "cal": 14, "tl": 51, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 20, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
       { "name": "AspNetCore.Views_Shared__CookieConsentPartial", "rp": "FuelQuoteApp_p1.Views_Views_Shared__CookieConsentPartial.html", "cl": 0, "ucl": 7, "cal": 7, "tl": 25, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 8, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
       { "name": "AspNetCore.Views_Shared__Layout", "rp": "FuelQuoteApp_p1.Views_Views_Shared__Layout.html", "cl": 0, "ucl": 8, "cal": 8, "tl": 139, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 24, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
       { "name": "AspNetCore.Views_Shared_Error", "rp": "FuelQuoteApp_p1.Views_Views_Shared_Error.html", "cl": 0, "ucl": 5, "cal": 5, "tl": 25, "ct": "LineCoverage", "cbm": "-", "cb": 0, "tb": 2, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [] },
@@ -267,9 +281,15 @@ var assemblies = [
 var historicCoverageExecutionTimes = [];
 
 var riskHotspotMetrics = [
+      { "name": "Cyclomatic complexity", "explanationUrl": "https://en.wikipedia.org/wiki/Cyclomatic_complexity" },
 ];
 
 var riskHotspots = [
+  {
+    "assembly": "FuelQuoteApp_p1.Views", "class": "AspNetCore.Views_Client_DisplayProfile", "reportPath": "FuelQuoteApp_p1.Views_Views_Client_DisplayProfile.html", "methodName": "<ExecuteAsync()", "methodShortName": "<ExecuteAsync()", "fileIndex": 0, "line": 26,
+    "metrics": [
+      { "value": 34, "exceeded": true },
+    ]},
 ];
 
 var branchCoverageAvailable = true;
