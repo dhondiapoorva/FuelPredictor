@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PTh+572F8dwpWTBjJJfTWlEckZgBPuDCK46ZbSSBcCSyydRMkJaCnedfrQacN23h8aFAPq0Eq4GmHpGowvU8Mw==",
+  "dgSpecHash": "hOdcOiGiytIiU81rUsO2z/NwGiihGTA6Cd4q49ZXOvyneuBuRpqgU+9mZiHYxi5IKGREpdBOEazehXgOdApFAg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dell\\OneDrive\\Desktop\\FuelQuoteApp_p1\\FuelQuoteApp_p1\\FuelQuoteApp_p1.csproj",
+  "projectFilePath": "E:\\UH\\Summer\\SD\\FuelQuoteApp_p1\\FuelQuoteApp_p1\\FuelQuoteApp_p1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dell\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.17\\microsoft.aspnetcore.cryptography.internal.5.0.17.nupkg.sha512",

@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel;
 
-
 namespace FuelQuoteApp_p1.Models.Client_Profile
 {
     public enum States

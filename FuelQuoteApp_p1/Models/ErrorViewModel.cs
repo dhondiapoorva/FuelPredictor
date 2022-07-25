@@ -9,4 +9,3 @@ namespace FuelQuoteApp_p1.Models
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
     }
 }
-

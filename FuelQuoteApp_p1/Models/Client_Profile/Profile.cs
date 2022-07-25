@@ -5,7 +5,6 @@ namespace FuelQuoteApp_p1.Models.Client_Profile
 {
     public class Profile
     {
-        [Key]
         [Required(ErrorMessage = "Full name is required!")]
         [MaxLength(50, ErrorMessage = "Maximum characters allowed is 50!!")]
         public string FullName { get; set; }
@@ -32,4 +31,3 @@ namespace FuelQuoteApp_p1.Models.Client_Profile
         
     }
 }
-

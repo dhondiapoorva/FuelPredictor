@@ -1,5 +1,7 @@
 ﻿using FuelQuoteApp_p1.EntModels.Models;
 using FuelQuoteApp_p1.Models.Client_Profile;
+using FuelQuoteApp_p1.Provider;
+using FuelQuoteApp_p1.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -10,31 +12,23 @@ namespace FuelQuoteApp_p1.Controllers
 {
     public class ClientController : Controller
     {
+        private readonly IFuelQuoteProvider _FuelQuotePro;
+
+        public ClientController(IFuelQuoteProvider FuelQuotePro)
+        {
+            _FuelQuotePro = FuelQuotePro;
+
+        }
         [HttpGet]
         [ExcludeFromCodeCoverage]
         public IActionResult ClientDashBoard()
         {
-            int usrID = 1; //HardCoded
-            Client client = new Client
-            {
-                User_ID = new User()
-                {
-                    Id = usrID,
-                    Email="sainarne15@gmail.com",
-                    UserName="sainarne15@gmail.com"
-                },
-                FullName = "Narne Lakshmi Narasimha Sai",
-                Address1 = "Kirby Dr",
-                Address2 = "",
-                City = "Houston",
-                State = States.TX.ToString(),
-                ZipCode = 77054.ToString()
-            };
+            int usrID = _FuelQuotePro.GetUserID(User.Identity.Name);
+            Client client = _FuelQuotePro.GetClient(usrID);
             HttpContext.Session.SetString("ClientDetails", JsonConvert.SerializeObject(client));
 
             return View();
         }
-
         [HttpGet]
         [ExcludeFromCodeCoverage]
         public IActionResult ClientProfile()
@@ -61,11 +55,12 @@ namespace FuelQuoteApp_p1.Controllers
 
                 };
 
-                User usrDetails = new User();
-                client.User_ID = usrDetails;
-             
+                //User usrDetails = new User();
+                // client.User_ID = usrDetails;
+                client.User_Id = _FuelQuotePro.GetUserID(User.Identity.Name);
+                Client AddedClient = _FuelQuotePro.AddClient(client);
 
-                return RedirectToAction("GetQuote", "Quote");
+                return RedirectToAction("ClientDashBoard", "Client");
             }
             else
             {
@@ -88,13 +83,12 @@ namespace FuelQuoteApp_p1.Controllers
                 Address1 = client.Address1,
                 Address2 = client.Address2,
                 City = client.City,
-                State = States.TX,
+                State = States.AK,
                 ZipCode = client.ZipCode
             };
 
             return View(cl);
         }
-
 
         public bool ClientProfileDataValidation(Profile data)
         {
@@ -119,5 +113,7 @@ namespace FuelQuoteApp_p1.Controllers
 
             return flag;
         }
+
+
     }
 }

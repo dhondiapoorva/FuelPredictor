@@ -4,7 +4,6 @@ namespace FuelQuoteApp_p1.Models.Account
 {
     public class Login
     {
-        [Key]
         [Required(ErrorMessage = "Email is required!")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
@@ -17,4 +16,3 @@ namespace FuelQuoteApp_p1.Models.Account
         public bool RememberMe { get; set; }
     }
 }
-

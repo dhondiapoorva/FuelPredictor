@@ -1,5 +1,6 @@
 using FuelQuoteApp_p1.Models.Account;
-
+using FuelQuoteApp_p1.Provider;
+using FuelQuoteApp_p1.Repository;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -31,7 +32,7 @@ namespace FuelQuoteApp_p1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<FuelQuoteDBContext>(item => item.UseSqlServer(Configuration.GetConnectionString("MyCon")));
+            services.AddDbContext<FuelQuoteDBContext>(item => item.UseSqlServer(Configuration.GetConnectionString("MyCon")).UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
             services.AddIdentity<IdentityUser, IdentityRole>(options =>
             {
                 options.Password.RequiredLength = 8;
@@ -52,7 +53,8 @@ namespace FuelQuoteApp_p1
             }
                 ).SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Latest);
 
-           
+            services.AddScoped<IFuelQuoteRepository, FuelQuoteRepository>();
+            services.AddScoped<IFuelQuoteProvider, FuelQuoteProvider>();
             services.AddSession(options =>
             {
                 options.IdleTimeout = TimeSpan.FromHours(2);

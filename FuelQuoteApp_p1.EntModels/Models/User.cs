@@ -1,4 +1,7 @@
-﻿namespace FuelQuoteApp_p1.EntModels.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace FuelQuoteApp_p1.EntModels.Models
 {
     public class User
     {

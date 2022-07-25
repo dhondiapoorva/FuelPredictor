@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FuelQuoteApp_p1.BusinessLayer\FuelQuoteApp_p1.BusinessLayer.csproj" />
     <ProjectReference Include="..\FuelQuoteApp_p1.EntModels\FuelQuoteApp_p1.EntModels.csproj" />
   </ItemGroup>
 
