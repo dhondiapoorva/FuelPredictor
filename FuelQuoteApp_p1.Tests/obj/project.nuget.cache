@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rp+oEPnQi4wkf+IBD4/ENfBYYL1+u1exS+HOmatMW9jbTSaJxbht3oTqnnvu1WB7t7HTGS/4TLEwqgUAKFvkPQ==",
+  "dgSpecHash": "Bh5iH6vKRkdQ4OEJeHVm6PTHcNlyzgLWzQ7R4R3YKMAk2MIuhNEmOIJXsRPU6VrNBhqdRjT+EW8H6OeUr/joBg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dell\\OneDrive\\Desktop\\FuelQuoteApp_p1\\FuelQuoteApp_p1.Tests\\FuelQuoteApp_p1.Tests.csproj",
+  "projectFilePath": "E:\\UH\\Summer\\SD\\FuelQuoteApp_p1\\FuelQuoteApp_p1.Tests\\FuelQuoteApp_p1.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dell\\.nuget\\packages\\castle.core\\5.0.0\\castle.core.5.0.0.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",

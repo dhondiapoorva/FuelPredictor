@@ -1753,6 +1753,7 @@
       },
       "FuelQuoteApp_p1/1.0.0": {
         "dependencies": {
+          "FuelQuoteApp_p1.BusinessLayer": "1.0.0",
           "FuelQuoteApp_p1.EntModels": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.17",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.17",
@@ -1762,7 +1763,18 @@
           "FuelQuoteApp_p1.dll": {}
         }
       },
+      "FuelQuoteApp_p1.BusinessLayer/1.0.0": {
+        "runtime": {
+          "FuelQuoteApp_p1.BusinessLayer.dll": {}
+        }
+      },
       "FuelQuoteApp_p1.EntModels/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.17",
+          "Microsoft.EntityFrameworkCore": "5.0.17",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.17",
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "5.0.2"
+        },
         "runtime": {
           "FuelQuoteApp_p1.EntModels.dll": {}
         }
@@ -2749,6 +2761,11 @@
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
     "FuelQuoteApp_p1/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FuelQuoteApp_p1.BusinessLayer/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
