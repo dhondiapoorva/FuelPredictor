@@ -1,47 +1,142 @@
-﻿using FuelQuoteApp_p1.Models.Quote;
+﻿using FuelQuoteApp_p1.BusinessLayer.BL;
+using FuelQuoteApp_p1.EntModels.Models;
+using FuelQuoteApp_p1.Models.Quote;
+using FuelQuoteApp_p1.Provider;
+using FuelQuoteApp_p1.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 
 namespace FuelQuoteApp_p1.Controllers
 {
     public class QuoteController : Controller
     {
+        private readonly IFuelQuoteProvider _FuelQuotePro;
+        public QuoteController(IFuelQuoteProvider FuelQuotePro)
+        {
+            _FuelQuotePro = FuelQuotePro;
+        }
+
         [HttpGet]
+        [ExcludeFromCodeCoverage]
         public IActionResult GetQuote()
         {
             FQuote quote = new FQuote();
-            quote.DeliveryAddress = "8485 Kirby Drive";
-            quote.PricePerGallon = 15;
-            quote.TotalAmount = 9595;
+            Client client = new Client();
+            client = JsonConvert.DeserializeObject<Client>(HttpContext.Session.GetString("ClientDetails"));
+            quote.DeliveryAddress = client.Address1 + " " + client.Address2;
             return View(quote);
         }
 
+        [HttpPost]
+        [ExcludeFromCodeCoverage]
+        public IActionResult GetQuote(FQuote quote)
+        {
+
+            Price pricedetails = new Price();
+            pricedetails = GetPrice(quote);
+            quote.PricePerGallon = pricedetails.PricePerGallon;
+            quote.TotalAmount = pricedetails.TotalAmount;
+            HttpContext.Session.SetString("QuoteDetails", JsonConvert.SerializeObject(quote));
+
+            return RedirectToAction("GetFinalQuote");
+
+        }
 
         [HttpGet]
+        [ExcludeFromCodeCoverage]
         public IActionResult QuoteHistory()
         {
-            FQuote quote1 = new FQuote()
+
+            int usrID = _FuelQuotePro.GetUserID(User.Identity.Name);
+            IEnumerable<Quote> quotess = _FuelQuotePro.GetQuoteHistory(usrID);
+
+            return View(quotess);
+        }
+
+        [ExcludeFromCodeCoverage]
+        public Price GetPrice(FQuote quote)
+        {
+            int usrID = _FuelQuotePro.GetUserID(User.Identity.Name);
+
+            Client client = new Client();
+            client = JsonConvert.DeserializeObject<Client>(HttpContext.Session.GetString("ClientDetails"));
+            QuoteDetails quoteInfo = new QuoteDetails
             {
-                DateRequested = DateTime.Now,
-                GallonsRequested = 90,
-                DeliveryAddress = "Kirby Drive",
-                PricePerGallon = 5,
-                TotalAmount = 1515
+                DateRequested = quote.DateRequested,
+                GallonsRequested = quote.GallonsRequested,
+                State = client.State,
+                quoteHistory = _FuelQuotePro.GetQuoteHistoryCount(usrID)
             };
-            FQuote quote2 = new FQuote()
+
+            
+            Price price = new Price { PricePerGallon = 5, TotalAmount = 1500 };    //Passing Hard Coded values, since pricing module is yet to be created
+
+            return price;
+        }
+
+        [HttpGet]
+        [ExcludeFromCodeCoverage]
+        public IActionResult GetFinalQuote()
+        {
+            FQuote quote = new FQuote();
+            Client client = new Client();
+            quote = JsonConvert.DeserializeObject<FQuote>(HttpContext.Session.GetString("QuoteDetails"));
+            client = JsonConvert.DeserializeObject<Client>(HttpContext.Session.GetString("ClientDetails"));
+            quote.DeliveryAddress = client.Address1 + " " + client.Address2;
+            return View(quote);
+
+        }
+
+        [HttpPost]
+        [ExcludeFromCodeCoverage]
+        public IActionResult GetFinalQuote(FQuote quote)
+        {
+            quote = JsonConvert.DeserializeObject<FQuote>(HttpContext.Session.GetString("QuoteDetails"));
+            Client client = new Client();
+            client = JsonConvert.DeserializeObject<Client>(HttpContext.Session.GetString("ClientDetails"));
+            quote.DeliveryAddress = client.Address1 + " " + client.Address2;
+
+            Quote dbquote = new Quote
             {
-                DateRequested = DateTime.Now,
-                GallonsRequested = 85,
-                DeliveryAddress = "Buffalo Drive",
-                PricePerGallon = 5,
-                TotalAmount = 1390
+                DateRequested = quote.DateRequested,
+                DeliveryAddress = quote.DeliveryAddress,
+                GallonsRequested = quote.GallonsRequested,
+                PricePerGallon = quote.PricePerGallon,
+                TotalAmount = quote.TotalAmount,
+
             };
-            List<FQuote> quotes = new List<FQuote>();
-            quotes.Add(quote1);
-            quotes.Add(quote2);
-            return View(quotes);
+            User userinfo = new User();
+            dbquote.User_Id = userinfo.Id;
+            dbquote.User_Id = _FuelQuotePro.GetUserID(User.Identity.Name);
+            dbquote = _FuelQuotePro.AddQuote(dbquote);
+            return View("SavedQuote", dbquote);
+        }
+
+
+       
+
+        public bool QuoteDataValidation(Quote data)
+        {
+            bool flag = false;
+            if (data.GallonsRequested != 0)  /*Default value is 0*/
+            {
+                if  (DateTime.Compare(data.DateRequested,DateTime.Now)>0)
+                    {
+                            flag = true;
+                     }       
+                
+            }
+            else
+            {
+                flag = false;
+            }
+
+            return flag;
         }
     }
 }
