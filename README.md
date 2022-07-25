@@ -1,6 +1,74 @@
 # FuelPredictor
 To predict the rate of the fuel based on the following criteria: - Client Location (in-state or out-of-state) - Client history (existing customer with previous purchase or new) - Gallons requested - Company profit margin (%)
 
+
+
+
+## Assignment 4
+
+### Requirements and How to the Run the Project is same as for Assignment 2(Below)
+
+### Backend Technology
+* ASP.NET CORE
+* Entity Framework (LINQ)
+#### Testing
+* NUnit
+* Moq Framework (For Mocking the Methods)
+* Coverlet (For Code Coverage)
+
+### Points to Read
+1. The *FuelQuoteApp_p1.Tests* Project contains the Test files which contains Unit Test cases for the AccountController, ClientController, QuoteController and        FuelQuoteProvider.cs files. Only these files contains the runnable code required for the project.
+2. In this project, we used Entity Framework which helps in creating the database, retrieval of the data and modifying the database. Entity Framework uses LINQ instead of SQL for querying the data from the database.
+3. We used Moq to mock the methods of FuelQuoteRepository for testing the FuelQuoteProvider methods (As these methods use the methods in FuelQuoteRepository). The controllers can not access the database directly (Abstraction and Data  Security). </br>
+  **The flow is :**
+          Controllers => Provider => Repository => Database 
+4. We added the project *FuelQuoteApp_p1.BusinessLayer*, it will be updated with the logics for all the modules in the upcoming assignments.
+5.  **Password Encryption :**
+We used ASP.Net Core Default encryption methods to store the password. It uses a Key Derivation Function with random salt to produce the hash.The **Microsoft.AspNetCore.Identity** handles this.
+6. The *FuelQuoteApp_p1/Models* Contains all the models and their validations, these are the models which were responsible for capturing the data for the backend.
+7. The *FuelQuoteApp_p1.EntModels* Contains the models which will be used for the data exchange between the frontend and Backend.
+8. The *FuelQuoteApp_p1/Controllers* has all the controllers for our project.
+
+### Creating Database
+For creating the database, we have to create a DBContext model     (FuelQuoteDBContext.cs in the project). We have to state the DB sets in that model which will create the necessary tables in the database.
+ 
+##### Creating and using connection string for the Database:
+**Appsettings.json :**
+_"ConnectionStrings": {
+    "MyCon": "server=DESKTOP-VE1MV7L;database=FQPDB;Integrated Security=True;"
+  }_
+
+**Startup.cs:**
+
+_services.AddDbContext<FuelQuoteDBContext>(item=> item.UseSqlServer(Configuration.GetConnectionString("MyCon")).UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));_
+  
+**Then we have to run the following commands in Package Manager Console (PMC)**
+ 
+* Install-Package Microsoft.EntityFrameworkCore.Tools
+* Add-Migration InitialCreate
+* Update-Database
+
+This will create a database with name FQPDB in the microsoft sql server management studio.This installs the PMC tools for EF Core. The Add-Migration command scaffolds a migration to create the initial set of tables for the model. The Update-Database command creates the database and applies the new migration to it.
+
+### Download Code Coverage Reports 
+* Client Controller
+   * ![alt text](https://github.com/sainarne15/Pics/files/9177814/Client_controller.pdf)
+* Account Controller
+   * ![alt text](https://github.com/sainarne15/Pics/files/9177803/Account_controller.pdf)
+* Quote Controller
+   * ![alt text](https://github.com/sainarne15/Pics/files/9177816/Quote_Controller.pdf)
+* FuelQuoteProvider.cs
+   * ![alt text](https://github.com/sainarne15/Pics/files/9177819/FuelQuoteProvider.pdf)
+
+  
+### Contribution
+1. Apoorva Dhondi - Worked on  profile management in the database, modified the controllers and generated code coverage reports. 
+2. Sushma Gangavarapu - worked on the login database and encryptions and worked on adding new Views such as quote confirmation etc.
+3. Lakshmi Narasimha Sai Narne - Worked on the remaining database operations and changed the controllers in the project and worked on writing Unit test cases with NUnit and Mocked methods.
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 ## Assignment 3
 
 ### Requirements and How to the Run the Project is same as for Assignment 2(Below)
