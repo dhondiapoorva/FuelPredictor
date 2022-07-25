@@ -1,5 +1,7 @@
 ﻿using FuelQuoteApp_p1.EntModels.Models;
 using FuelQuoteApp_p1.Models.Account;
+using FuelQuoteApp_p1.Provider;
+using FuelQuoteApp_p1.Repository;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -16,13 +18,14 @@ namespace FuelQuoteApp_p1.Controllers
     {
         private readonly UserManager<IdentityUser> userManager;
         private readonly SignInManager<IdentityUser> signInManager;
+        private readonly IFuelQuoteProvider _FuelQuotePro;
 
-        public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
+        public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IFuelQuoteProvider FuelQuotePro)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
+            _FuelQuotePro = FuelQuotePro;
         }
-
         [HttpGet]
         [ExcludeFromCodeCoverage]
         public IActionResult Display()
@@ -31,16 +34,16 @@ namespace FuelQuoteApp_p1.Controllers
         }
 
         [HttpGet]
-        [AllowAnonymous]
         [ExcludeFromCodeCoverage]
+        [AllowAnonymous]
         public IActionResult Login()
         {
             return View();
         }
 
         [HttpPost]
-        [AllowAnonymous]
         [ExcludeFromCodeCoverage]
+        [AllowAnonymous]
         public async Task<IActionResult> Login(Login model)
         {
             if (ModelState.IsValid)
@@ -50,7 +53,7 @@ namespace FuelQuoteApp_p1.Controllers
 
                 if (result.Succeeded)
                 {
-                    int userID = 1;   //Hard Coding
+                    int userID = _FuelQuotePro.GetUserID(model.Email);
                     User userinfo = new User
                     {
                         Id = userID,
@@ -59,7 +62,7 @@ namespace FuelQuoteApp_p1.Controllers
 
                     HttpContext.Session.SetString("SessionUser", JsonConvert.SerializeObject(userinfo));
 
-                    bool clientinfo = true; //Hard Coding
+                    bool clientinfo = _FuelQuotePro.GetClientInfo(userID);
                     if (clientinfo)
                     {
                         return RedirectToAction("ClientDashBoard", "Client");
@@ -78,16 +81,16 @@ namespace FuelQuoteApp_p1.Controllers
         }
 
         [HttpGet]
-        [AllowAnonymous]
         [ExcludeFromCodeCoverage]
+        [AllowAnonymous]
         public IActionResult Register()
         {
             return View();
         }
 
         [HttpPost]
-        [AllowAnonymous]
         [ExcludeFromCodeCoverage]
+        [AllowAnonymous]
         public async Task<IActionResult> Register(Register registerInfo)
         {
             if (ModelState.IsValid)
@@ -103,7 +106,7 @@ namespace FuelQuoteApp_p1.Controllers
                         UserName = registerInfo.UserName,
                         Email = registerInfo.Email
                     };
-                    
+                    _FuelQuotePro.AddUser(userinfo);
 
                     TempData["RegistrationSuccessful"] = "You're registered succesfully!";
                     return RedirectToAction("Login", "Account");
@@ -122,7 +125,7 @@ namespace FuelQuoteApp_p1.Controllers
         public IActionResult Logout()
         {
             signInManager.SignOutAsync();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Account");
 
         }
 
