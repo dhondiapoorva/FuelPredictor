@@ -20,14 +20,16 @@ namespace FuelQuoteApp_p1.Repository
             Client c = context.Client.FirstOrDefault(x => x.User_Id==client.User_Id);
             if (c != null)
             {
-                c.Address1 = client.Address1;
-                c.Address2 = client.Address2;
-                c.FullName = client.FullName;
-                c.City = client.City;
-                c.Email = client.Email;
-                c.ZipCode = client.ZipCode;
-                c.State = client.State;
+                context.Client.Remove(c);
+                /*  c.Address1 = client.Address1;
+                  c.Address2 = client.Address2;
+                  c.FullName = client.FullName;
+                  c.City = client.City;
+                  c.Email = client.Email;
+                  c.ZipCode = client.ZipCode;
+                  c.State = client.State;*/
 
+                context.Client.Add(client);
                 context.SaveChanges();
                 return client;
             }
@@ -82,7 +84,6 @@ namespace FuelQuoteApp_p1.Repository
         public IEnumerable<Quote> GetQuoteHistory(int UserID)
         {
             IEnumerable<Quote> quotes = context.FuelQuote.Where(x => x.User_Id == UserID);
-
             return quotes;
         }
 

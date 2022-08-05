@@ -83,7 +83,7 @@ namespace FuelQuoteApp_p1.Controllers
                 Address1 = client.Address1,
                 Address2 = client.Address2,
                 City = client.City,
-                State = States.AK,
+                State = (States)Enum.Parse(typeof(States), client.State),
                 ZipCode = client.ZipCode
             };
 

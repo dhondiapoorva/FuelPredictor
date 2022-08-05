@@ -44,6 +44,7 @@ color:#DA252A;
             <h3 class="panel-title">
                 Fill in the Quotation Form
             </h3>
+             <p>The price and total amount will be calculated and displayed in the next page based on the information you are gonna provide now</p>
         </div>
 
         <div class="panel-body">
@@ -60,7 +61,7 @@ color:#DA252A;
                 </div>
                 <div class="form-group">
                     <label asp-for="DateRequested">Date Requested</label>
-                    <input asp-for="DateRequested" type="date" asp-format="{0:yyyy-MM-dd}" class="form-control" required/>
+                    <input asp-for="DateRequested" type="date" asp-format="{0:yyyy-MM-dd}" value="@DateTime.Now.ToString("yyyy-MM-dd")" class="form-control" required/>
                     <span asp-validation-for="DateRequested" class="text-danger"></span>
                 </div>
                 <div class="form-group">

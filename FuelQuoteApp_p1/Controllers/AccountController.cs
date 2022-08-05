@@ -50,7 +50,7 @@ namespace FuelQuoteApp_p1.Controllers
             {
 
                 var result = await signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
-
+                // Uses Key Derivation function To encrypt the password  (Default password encryption in Identity User)
                 if (result.Succeeded)
                 {
                     int userID = _FuelQuotePro.GetUserID(model.Email);
@@ -74,8 +74,7 @@ namespace FuelQuoteApp_p1.Controllers
                     }
 
                 }
-
-                ModelState.AddModelError(string.Empty, "Invalid Credentials!");
+                ModelState.AddModelError(string.Empty, "Invalid Credentials! Please check and enter again");
             }
             return View(model);
         }

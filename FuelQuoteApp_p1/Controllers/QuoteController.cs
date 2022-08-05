@@ -73,8 +73,9 @@ namespace FuelQuoteApp_p1.Controllers
                 quoteHistory = _FuelQuotePro.GetQuoteHistoryCount(usrID)
             };
 
-            
-            Price price = new Price { PricePerGallon = 5, TotalAmount = 1500 };    //Passing Hard Coded values, since pricing module is yet to be created
+
+            PriceModule getPrice = new PriceModule();
+            Price price = getPrice.GetPrice(quoteInfo);
 
             return price;
         }
