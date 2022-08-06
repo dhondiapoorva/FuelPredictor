@@ -3,6 +3,68 @@ To predict the rate of the fuel based on the following criteria: - Client Locati
 
 
 
+## Complete Project
+
+### Conditions for Pricing module
+
+**Formula :** Suggested Price = Current Price + Margin
+
+ Where,
+
+  Current price per gallon = $1.50 (this is the price what distributor gets from refinery and it   varies based upon crude price. But we are keeping it constant for simplicity)
+  Margin =  Current Price * (Location Factor - Rate History Factor + Gallons Requested Factor +   Company Profit Factor)
+
+ Consider these factors:
+ Location Factor = 2% for Texas, 4% for out of state.
+ Rate History Factor = 1% if client requested fuel before, 0% if no history (you can query fuel   quote table to check if there are any rows for the client)
+ Gallons Requested Factor = 2% if more than 1000 Gallons, 3% if less
+ Company Profit Factor = 10% always
+    
+### Points to be noted
+* Added the pricing module based on the above factors
+* We have changed the login page and added more pages to the web application to make it simple and more interactive. 
+*  _Layout.cshtml in Views/Shared is the layout page which is shared by all the web pages in Views
+
+### Screenshots
+* Login page
+  * ![alt text](https://user-images.githubusercontent.com/42679257/183232399-cdcf55e7-1c12-45bd-939a-0760e729cf2f.PNG)
+* Register Page
+  * ![alt text](https://user-images.githubusercontent.com/42679257/183232412-852dc070-70dd-45f6-9a46-c9798808182a.PNG)
+* Menu Page
+  * ![alt text](https://user-images.githubusercontent.com/42679257/183232421-be7808f6-e4f1-4da0-a951-5409fae5d5ec.PNG)
+* Client Profile Page
+  * ![alt text](https://user-images.githubusercontent.com/42679257/183232432-26648461-66c8-4fb8-aebe-d7c63e635f5b.PNG)
+* Update Client Profile Page
+  * ![alt text](https://user-images.githubusercontent.com/42679257/183232440-c5c4fb7c-2e8d-4e7d-a215-e688b9f590c5.PNG)
+* Get Quote page
+  * ![alt text](https://user-images.githubusercontent.com/42679257/183232450-94ecc9db-10e3-4990-9884-cb8f2e11fb7e.PNG)
+* Submit Quote page
+  * ![alt text](https://user-images.githubusercontent.com/42679257/183232473-a4413a81-5563-40fb-97b1-807ac6768240.PNG)
+* Display Submitted Quote page
+  * ![alt text](https://user-images.githubusercontent.com/42679257/183232496-799cf0f1-041f-422b-ad9f-e278cc451290.PNG)
+* Quote History Page
+  * ![alt text](https://user-images.githubusercontent.com/42679257/183232508-2e8c936f-7a9c-44cc-88d9-fb6d92482fae.PNG)
+
+### Download Code Coverage Reports 
+* Client Controller
+   * ![alt text](https://github.com/sainarne15/Pics/files/9177814/Client_controller.pdf)
+* Account Controller
+   * ![alt text](https://github.com/sainarne15/Pics/files/9177803/Account_controller.pdf)
+* Quote Controller
+   * ![alt text](https://github.com/sainarne15/Pics/files/9177816/Quote_Controller.pdf)
+* FuelQuoteProvider.cs
+   * ![alt text](https://github.com/sainarne15/Pics/files/9177819/FuelQuoteProvider.pdf)
+* PriceModule.cs
+   * ![alt text](https://github.com/sainarne15/DataStructures/files/9274339/PriceModule.pdf)
+ 
+### Contribution
+1. Apoorva Dhondi - Worked on updating the login page and added more views in the project.
+2. Sushma Gangavarapu - Worked on creating Test cases for the pricing module and generated the code coverage report.
+3. Lakshmi Narasimha Sai Narne - Worked on creating and verifying the pricing module.
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 ## Assignment 4
 
