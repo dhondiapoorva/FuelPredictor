@@ -1,4 +1,5 @@
-﻿using FuelQuoteApp_p1.Controllers;
+﻿using FuelQuoteApp_p1.BusinessLayer.BL;
+using FuelQuoteApp_p1.Controllers;
 using FuelQuoteApp_p1.EntModels.Models;
 using FuelQuoteApp_p1.Models.Client_Profile;
 using FuelQuoteApp_p1.Provider;
@@ -155,6 +156,97 @@ namespace FuelQuoteApp_p1.Tests
             FuelQuoteProvider _pro = new FuelQuoteProvider(mock.Object);
             var result = _pro.GetUserID("sainarne15@gmail.com");
             Assert.IsInstanceOf<int>(result);
+        }
+
+        /*     [TestCase]
+             public void UserIdGetTest()
+             {
+                 Mock<IFuelQuoteRepository> mock = new Mock<IFuelQuoteRepository>();
+                 mock.Setup(p => p.GetUserID(It.IsAny<string>())).Returns((int)1);
+                 FuelQuoteProvider _pro = new FuelQuoteProvider(mock.Object);
+                 var result = _pro.GetUserID("sainarne15@gmail.com");
+                 Assert.IsInstanceOf<int>(result);
+             }*/
+        [TestCase]
+        public void PricingModule_allfact()
+        {
+            QuoteDetails quote = new QuoteDetails
+            {
+                DateRequested = DateTime.Today,
+                GallonsRequested = 1500,
+                quoteHistory = 2,
+                State = "TX"
+            };
+
+            float actual = 2542.5f;
+
+            PriceModule p = new PriceModule();
+            Price price = p.GetPrice(quote);
+
+            Assert.AreEqual(price.TotalAmount, actual);
+            
+
+        }
+        [TestCase]
+        public void PricingModule_locFactor()
+        {
+            QuoteDetails quote = new QuoteDetails
+            {
+                DateRequested = DateTime.Today,
+                GallonsRequested = 150,
+                quoteHistory = 0,
+                State = "TX"
+            };
+
+            float actual = 258.75f;
+
+            PriceModule p = new PriceModule();
+            Price price = p.GetPrice(quote);
+
+            Assert.AreEqual(price.TotalAmount, actual);
+
+
+        }
+        [TestCase]
+        public void PricingModule_histFactor()
+        {
+            QuoteDetails quote = new QuoteDetails
+            {
+                DateRequested = DateTime.Today,
+                GallonsRequested = 150,
+                quoteHistory = 2,
+                State = "Al"
+            };
+
+            float actual = 261f;
+
+            PriceModule p = new PriceModule();
+            Price price = p.GetPrice(quote);
+
+            Assert.AreEqual(price.TotalAmount, actual);
+
+
+        }
+
+        [TestCase]
+        public void PricingModule_gallonFactor()
+        {
+            QuoteDetails quote = new QuoteDetails
+            {
+                DateRequested = DateTime.Today,
+                GallonsRequested = 1500,
+                quoteHistory = 0,
+                State = "AL"
+            };
+
+            float actual = 2610f;
+
+            PriceModule p = new PriceModule();
+            Price price = p.GetPrice(quote);
+
+            Assert.AreEqual(price.TotalAmount, actual);
+
+
         }
 
 

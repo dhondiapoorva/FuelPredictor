@@ -38,12 +38,6 @@
             {
                 gallonsRequestedFactor = 0.03f;
             }
-
-            
-           
-             
-        
-
        
             finalPrices.PricePerGallon = PricePerGallon + ((locationFactor - rateHistoryFactor + gallonsRequestedFactor + CompanyProfitFactor) * PricePerGallon);
             finalPrices.TotalAmount = quoteinfo.GallonsRequested * finalPrices.PricePerGallon;
